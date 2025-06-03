@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+$bg: #0d0d1a;
+$surface: #1a1a2e;
+$primary: #8e9eff;
+$secondary: #9a86fd;
+$text: #f0f0f0;
+$accent: #f4a261;
+
+body {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-optical-sizing: auto;
+    letter-spacing: 1px;
+    background-color: $bg;
+    color: $text;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: $surface;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba($secondary, 0.2);
+
+    a {
+        margin: 0 20px;
+        color: $accent;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: color 0.3s;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: $secondary;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        &:hover {
+            color: $secondary;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+@import '../../styles.scss';
+#about {
+    text-align: center;
+}
+#home {
+    padding: 40px;
+    padding-bottom: 200px;
+    color: $text;
+
+    .intro {
+        text-align: center;
+
+        .photo {
+            width: 140px;
+            border-radius: 100px;
+            border: 2px solid $primary;
+            box-shadow: 0 0 10px $primary;
+        }
+
+        .info-block {
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: lighten($text, 10%);
+        }
+    }
+
+    .section {
+        margin-top: 50px;
+
+        h2 {
+            color: $accent;
+            margin-bottom: 20px;
+        }
+
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+
+        &.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        // Cascade : applique des délais progressifs selon l’ordre
+        &:nth-of-type(1) {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-of-type(2) {
+            transition-delay: 0.2s;
+        }
+
+        &:nth-of-type(3) {
+            transition-delay: 0.3s;
+        }
+
+        &:nth-of-type(4) {
+            transition-delay: 0.4s;
+        }
+
+        &:nth-of-type(5) {
+            transition-delay: 0.5s;
+        }
+
+        &:nth-of-type(6) {
+            transition-delay: 0.6s;
+        }
+    }
+
+    .timeline {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+
+            &::before {
+                content: '•';
+                position: absolute;
+                left: 0;
+                color: $secondary;
+            }
+        }
+    }
+
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        & span {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid $primary;
+            color: $text;
+            padding: 6px 12px;
+            border-radius: 5px;
+            box-shadow: 0 0 8px rgba($secondary, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+
+            &:hover {
+                background-color: rgba($primary, 0.1);
+                transform: scale(1.05);
+            }
+        }
+    }
+}
