@@ -9,6 +9,9 @@
     top: 0;
     z-index: 1000;
     box-shadow: 0 0 20px rgba($secondary, 0.2);
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-x: hidden;
 
     a {
         margin: 0 20px;
@@ -18,6 +21,7 @@
         letter-spacing: 1px;
         position: relative;
         transition: color 0.3s;
+        flex-shrink: 0;
 
         &::after {
             content: '';
@@ -39,4 +43,17 @@
             }
         }
     }
+}
+@include respond(phone) {
+    .navbar {
+      justify-content: space-around;
+      padding: 10px 15px;
+    
+      a {
+        margin: 10px;
+        font-size: 0.85rem;
+      }
+    }
+}
+@media (max-width: 768px) {
 }
