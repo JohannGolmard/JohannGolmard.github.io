@@ -15,46 +15,26 @@ body {
     letter-spacing: 1px;
     background-color: $bg;
     color: $text;
+    width: 100%;
     overflow-x: hidden;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    background: $surface;
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 0 20px rgba($secondary, 0.2);
-
-    a {
-        margin: 0 20px;
-        color: $accent;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-        transition: color 0.3s;
-
-        &::after {
-            content: '';
-            display: block;
-            height: 2px;
-            width: 0;
-            background: $secondary;
-            transition: width 0.3s;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
+@mixin respond($breakpoint) {
+    @if $breakpoint ==phone {
+        @media (max-width: 600px) {
+            @content;
         }
+    }
 
-        &:hover {
-            color: $secondary;
+    @else if $breakpoint ==tablet {
+        @media (max-width: 900px) {
+            @content;
+        }
+    }
 
-            &::after {
-                width: 100%;
-            }
+    @else if $breakpoint ==desktop {
+        @media (min-width: 901px) {
+            @content;
         }
     }
 }

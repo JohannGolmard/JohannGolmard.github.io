@@ -1,0 +1,42 @@
+@import '../../styles.scss';
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: $surface;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba($secondary, 0.2);
+
+    a {
+        margin: 0 20px;
+        color: $accent;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: color 0.3s;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: $secondary;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        &:hover {
+            color: $secondary;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
