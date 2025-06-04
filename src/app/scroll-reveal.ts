@@ -13,7 +13,6 @@ export class ScrollReveal {
   @HostListener('window:scroll', [])
   onScroll() {
     const rect = this.el.nativeElement.getBoundingClientRect();
-    console.log(rect, window.innerHeight);
     const isVisible = rect.top <= window.innerHeight - 100 && rect.bottom >= 100;
     if (isVisible && !this.shown) {
       this.setVisibleStyles();

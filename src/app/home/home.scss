@@ -1,7 +1,9 @@
 @import '../../styles.scss';
+
 #about {
     text-align: center;
 }
+
 #home {
     padding: 40px;
     padding-bottom: 200px;
@@ -13,14 +15,14 @@
         .photo {
             width: 140px;
             border-radius: 100px;
-            border: 2px solid $primary;
+            border: 2px solid $secondary;
             box-shadow: 0 0 10px $primary;
         }
 
         .info-block {
             margin-top: 10px;
             font-size: 0.95em;
-            color: lighten($text, 10%);
+            color: scale-color($color: $text, $lightness: 0%);
         }
     }
 
