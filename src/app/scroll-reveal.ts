@@ -24,13 +24,17 @@ export class ScrollReveal {
   }
 
   private setVisibleStyles() {
-    this.renderer.setStyle(this.el.nativeElement, 'opacity', '1');
-    this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(0)');
+    this.renderer.removeClass(this.el.nativeElement, 'hidden');
+    this.renderer.addClass(this.el.nativeElement, 'show');
+    // this.renderer.setStyle(this.el.nativeElement, 'opacity', '1');
+    // this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(0)');
   }
 
   private setHiddenStyles() {
-    this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
-    this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(20px)');
-    this.renderer.setStyle(this.el.nativeElement, 'transition', 'opacity 0.6s ease-out, transform 0.6s ease-out');
+    this.renderer.removeClass(this.el.nativeElement, 'show');
+    this.renderer.addClass(this.el.nativeElement, 'hidden');
+    // this.renderer.setStyle(this.el.nativeElement, 'opacity', '0');
+    // this.renderer.setStyle(this.el.nativeElement, 'transform', 'translateY(20px)');
+    // this.renderer.setStyle(this.el.nativeElement, 'transition', 'opacity 0.6s ease-out, transform 0.6s ease-out');
   }
 }
